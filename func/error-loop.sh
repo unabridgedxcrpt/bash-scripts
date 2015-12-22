@@ -1,5 +1,5 @@
 #!/bin/bash
-# Simple scipt for nubmer of attempts
+# Simple script for nubmer of attempts
 
 AttemptsFunc() {
     counter=$1
