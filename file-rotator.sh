@@ -1,13 +1,14 @@
 #!/bin/sh
-#-----------------------------------------------------------------------
+#----------------------------------------------------------------------------------
 # FILE ROTATOR SCRIPT
 #
 # The purpose of this script is to rotate, compress and delete files
 # - Files older than ARC_AGE are gzipped and rotated
 # - Files bigger than SIZE_LIM are gzipped and rotated
 # - Gzipped files older than DEL_AGE are deleted
+# This script is hard-coded to work on specific directory, age, and file size limit
 #
-#-----------------------------------------------------------------------
+#----------------------------------------------------------------------------------
 # Vars
 DATE=`date +%F"-"%H:%M`
 FILEDIR="/storage/logs/"
