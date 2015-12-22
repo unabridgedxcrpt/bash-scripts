@@ -9,12 +9,26 @@
 # This script is hard-coded to work on specific directory, age, and file size limit
 #
 #----------------------------------------------------------------------------------
+
+# USAGE: send 3 arguments - age limit to compress, large file size value in MB, and deletion time
+if [ $# -eq 3 ]
+   then
+      cat << _EOF_
+
+USAGE: $0 directory delete_age_days archive_age_days large_size_limit_MB
+        e.g. file-rotator /storage/logs/ 30 1 20
+       ...
+_EOF_
+      exit
+fi
+
 # Vars
 DATE=`date +%F"-"%H:%M`
-FILEDIR="/storage/logs/"
-DEL_AGE="30"
-ARC_AGE="1"
-SIZE_LIM="20M"
+FILEDIR="${1}"
+DEL_AGE="${2}"
+ARC_AGE="${3}"
+SIZE_LIM="${4}"+"M"
+
 # Diagnostics
 echo "-= Rotation starting =-"
 echo "    Directory to search: $FILEDIR"
